@@ -1,9 +1,21 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { login } from '../features/user';
 
 function Login() {
+  const dispatch = useDispatch();
+
   return (
     <div>
-      <button>Login</button>
+      <button
+        onClick={() => {
+          dispatch(
+            login({ name: 'Patrick', age: 20, email: 'patrickmanzi@gmail.com' })
+          );
+        }}
+      >
+        Login
+      </button>
     </div>
   );
 }
